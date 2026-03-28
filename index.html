@@ -890,7 +890,7 @@
 
     <!-- NETLIFY FORM -->
     <div class="contact-form-box">
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+      <form name="contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
         <input type="hidden" name="form-name" value="contact" />
         <p style="display:none"><input name="bot-field" /></p>
 
@@ -1032,47 +1032,7 @@
 
   renderPortfolio();
 
-  // ══════════════════════════════════════════
-  // FORM — работи на Netlify и локално
-  // ══════════════════════════════════════════
-  const form = document.getElementById('contactForm');
-  const isNetlify = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Изпраща се...';
-    btn.disabled = true;
-
-    const data = new FormData(form);
-
-    if (isNetlify) {
-      // Netlify Forms — URL-encoded формат
-      try {
-        const res = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(data).toString()
-        });
-        if (res.ok) {
-          form.style.display = 'none';
-          document.getElementById('formSuccess').classList.add('visible');
-        } else {
-          throw new Error();
-        }
-      } catch {
-        btn.textContent = 'Изпрати запитване →';
-        btn.disabled = false;
-        alert('Грешка. Моля пишете на 0895 615 903 (Viber/телефон).');
-      }
-    } else {
-      // Локално тестване — симулира успех
-      setTimeout(() => {
-        form.style.display = 'none';
-        document.getElementById('formSuccess').classList.add('visible');
-      }, 600);
-    }
-  });
+  // Формата се обработва директно от Netlify (без JavaScript)
 
   // ══════════════════════════════════════════
   // SCROLL ANIMATIONS
