@@ -40,6 +40,8 @@
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -653,7 +655,7 @@
   </ul>
   <div class="nav-right">
     <a class="nav-phone" href="tel:+359895615903">0895 615 903</a>
-    <a class="btn btn-neon" href="#contact">Безплатна консултация</a>
+    <a class="btn btn-neon" href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/ivokarabashev/meet-with-me'});return false;">Безплатна консултация</a>
   </div>
 </nav>
 
@@ -677,6 +679,7 @@
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn btn-neon">🚀 Стартирай проект</a>
+        <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/ivokarabashev/meet-with-me'});return false;" class="btn btn-ghost">📅 Безплатна консултация</a>
         <a href="#portfolio" class="btn btn-ghost">Виж портфолиото →</a>
       </div>
       <div class="hero-proof">
