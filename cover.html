@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 820px; height: 312px;
+    background: #080808;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 60px;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Blob backgrounds */
+  .blob1 {
+    position: absolute; width: 300px; height: 300px;
+    background: rgba(0,255,136,0.07); border-radius: 50%;
+    filter: blur(60px); top: -50px; right: 100px;
+  }
+  .blob2 {
+    position: absolute; width: 200px; height: 200px;
+    background: rgba(0,212,255,0.06); border-radius: 50%;
+    filter: blur(50px); bottom: -30px; left: 200px;
+  }
+
+  /* Grid lines */
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .left { position: relative; z-index: 1; }
+
+  .logo-row {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+  }
+  .logo-mark {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, #00ff88, #00d4ff);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 22px; color: #000;
+  }
+  .logo-text {
+    font-size: 28px; font-weight: 800; color: #fff; letter-spacing: -1px;
+  }
+  .logo-text span { color: #00ff88; }
+
+  .tagline {
+    font-size: 15px; color: #888; letter-spacing: 1px; margin-bottom: 24px;
+  }
+
+  .pills { display: flex; gap: 10px; }
+  .pill {
+    font-size: 11px; font-weight: 600; letter-spacing: 1px;
+    padding: 5px 14px; border-radius: 50px;
+    border: 1px solid rgba(0,255,136,0.3);
+    color: #00ff88; background: rgba(0,255,136,0.06);
+  }
+
+  .right { position: relative; z-index: 1; text-align: right; }
+  .url {
+    font-size: 18px; font-weight: 700; color: #00ff88;
+    letter-spacing: 1px; margin-bottom: 8px;
+  }
+  .phone { font-size: 13px; color: #555; }
+</style>
+</head>
+<body>
+  <div class="blob1"></div>
+  <div class="blob2"></div>
+  <div class="grid"></div>
+
+  <div class="left">
+    <div class="logo-row">
+      <div class="logo-mark">W</div>
+      <div class="logo-text">Web<span>nova</span></div>
+    </div>
+    <div class="tagline">Уеб дизайн · SEO · Дигитален маркетинг</div>
+    <div class="pills">
+      <span class="pill">Уеб сайтове</span>
+      <span class="pill">SEO</span>
+      <span class="pill">България</span>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="url">webnova.bg</div>
+    <div class="phone">0895 615 903</div>
+  </div>
+</body>
+</html>
